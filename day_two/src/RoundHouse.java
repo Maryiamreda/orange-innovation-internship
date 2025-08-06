@@ -7,7 +7,7 @@ public class RoundHouse {
         int a = myObj.nextInt();
         int b = myObj.nextInt();
 
-        
+
         int steps = Math.abs(b);
         int[] path = new int[steps + 1];
 
@@ -15,12 +15,14 @@ public class RoundHouse {
         path[0] = current;
 
         if (b > 0) {
+            //clockwise
             for (int i = 1; i <= steps; i++) {
                 current++;
                 if (current > n) current = 1;
                 path[i] = current;
             }
         } else {
+            //counterclockwise
             for (int i = 1; i <= steps; i++) {
                 current--;
                 if (current < 1) current = n;
