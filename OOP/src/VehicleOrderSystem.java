@@ -11,16 +11,17 @@ public class VehicleOrderSystem {
         Map<String, Object> carFeatures = new HashMap<>();
         carFeatures.put("sunroof", true);
         carFeatures.put("transmission", "Automatic");
-
-        Vehicle car = new Vehicle();
-        car.setVehicle("ABC123", "Car", "Petrol", carFeatures);
+        Vehicle car = new Car("ABC123", "Car", "Petrol",  carFeatures);
+//        Vehicle car = new Vehicle();
+//        car.setVehicle("ABC123", "Car", "Petrol", carFeatures);
         inventory.add(car);
 
         Map<String, Object> truckFeatures = new HashMap<>();
         truckFeatures.put("cargoCapacity", 1500);
 
-        Vehicle truck = new Vehicle();
-        truck.setVehicle("XYZ789", "Truck", "Diesel", truckFeatures);
+//        Vehicle truck = new Vehicle();
+        Vehicle truck = new Truck("XYZ789", "Truck", "Diesel", truckFeatures);
+//        truck.setVehicle("XYZ789", "Truck", "Diesel", truckFeatures);
         inventory.add(truck);
 
         return inventory;

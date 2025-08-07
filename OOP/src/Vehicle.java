@@ -53,7 +53,9 @@ public class Vehicle {
 
 }
 class Car extends Vehicle {
-    public Car(String regNum, String fuel, Map<String, Object> features) {
+    public Car(String regNum,String type, String fuel, Map<String, Object> features) {
+        // initialize fields in subclass constructors
+        setVehicle(regNum, type, fuel, features);
     }
 
     public double calculatePrice() {
@@ -67,7 +69,8 @@ class Car extends Vehicle {
 
 // Truck class
 class Truck extends Vehicle {
-    public Truck(String regNum, String fuel, Map<String, Object> features) {
+    public Truck(String regNum,String type, String fuel, Map<String, Object> features) {
+        setVehicle(regNum, type, fuel, features);
     }
 
     public double calculatePrice() {
@@ -82,7 +85,8 @@ class Truck extends Vehicle {
 
 // Motorcycle class
 class Motorcycle extends Vehicle {
-    public Motorcycle(String regNum, String fuel, Map<String, Object> features) {
+    public Motorcycle(String regNum,String type,  String fuel, Map<String, Object> features) {
+        setVehicle(regNum, type, fuel, features);
     }
 
 
