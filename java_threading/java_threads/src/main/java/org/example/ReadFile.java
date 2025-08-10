@@ -22,7 +22,7 @@ class ReadFile implements Read {
             names.add(data);
         }
         myReader.close();
-        return new ArrayList<>(names); // return a copy
+        return new ArrayList<>(names);
     }
 
 
