@@ -7,7 +7,7 @@ public class Main {
     public static void main(String[] args) {
         Scanner sc=new Scanner(System.in);
         System.out.print("Enter admin id: ");
-        int adminName=sc.nextInt();
+        int id=sc.nextInt();
         final String url = "jdbc:mariadb://localhost:3306/jdbc?user=root&password=root";
         Connection c = DriverManager.getConnection(url);
 
