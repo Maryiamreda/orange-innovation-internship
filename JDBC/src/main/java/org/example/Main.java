@@ -19,12 +19,11 @@ public class Main {
         while (rs.next()) {
             System.out.println(rs.getString("name") + " " + rs.getString("email"));
         }
-        String shutdownQuery = "delete from admin  ";
 
         System.out.print("do you want to shutdown? ");
 String exit=sc.nextLine();
         if(exist.equal('yes')){
-            String shutdownQuery = "DELETE FROM admin";
+            String shutdownQuery = "delete from admin  ";
             Statement st = c.createStatement();
             st.executeUpdate(shutdownQuery);
             System.exit(0);
