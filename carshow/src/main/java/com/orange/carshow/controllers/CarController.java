@@ -29,9 +29,9 @@ public class CarController {
     public List<CardDto> getCars() {
         return carService.getCars();
     }
-    @PostMapping
-    public List<CardDto> getCars() {
-        return carService.getCars();
+    @PostMapping("/add")
+    public CardDto addCar(@RequestBody CardDto car) {
+        return carService.addNewCar(car);
     }
-
+    
 }

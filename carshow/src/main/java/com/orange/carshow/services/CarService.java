@@ -253,6 +253,11 @@ public class CarService {
     public List<CardDto> getCars() {
         return carLits;
     }
+    public CardDto addNewCar(CardDto car) {
+         carLits.add(car);
+         return car;
+    }
+
 
 
 
