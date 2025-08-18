@@ -2,15 +2,12 @@ package com.orange.carshow.services;
 
 import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.Collections;
 import java.util.List;
 
 import org.springframework.stereotype.Service;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
-import com.fasterxml.jackson.databind.JsonMappingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.orange.carshow.services.dto.CarRequest;
 import com.orange.carshow.services.dto.CardDto;
 
 import jakarta.annotation.PostConstruct;
@@ -263,7 +260,24 @@ public class CarService {
          carLits.add(car);
          return car;
     }
+    public CardDto getExpensiveCar() {
+        if (carLits.isEmpty()) {
+            System.out.println("ArrayList is empty.");
+            return null;
+        }
 
+
+        CardDto mostExpensiveCar = carLits.get(0);
+
+
+        for (int i = 1; i < carLits.size(); i++) {
+            if (carLits.get(i).getPrice() > mostExpensiveCar.getPrice()) {
+                mostExpensiveCar = carLits.get(i);
+            }
+        }
+
+        return mostExpensiveCar;
+    }
 
 
     public boolean deleteCar(Long id) {

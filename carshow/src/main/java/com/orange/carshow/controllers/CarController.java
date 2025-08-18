@@ -13,9 +13,9 @@ import com.orange.carshow.services.dto.CardDto;
 @RestController
 @RequestMapping("/cars")
 public class CarController {
-    
+
     private final CarService carService;
-    
+
     public CarController(CarService carService) {
         this.carService = carService;
     }
@@ -24,6 +24,11 @@ public class CarController {
     @GetMapping
     public List<CardDto> getCars() {
         return carService.getCars();
+    }
+
+    @GetMapping("/expensive")
+    public CardDto getExpensiveCar() {
+        return carService.getExpensiveCar();
     }
 
 
@@ -38,7 +43,7 @@ public class CarController {
 
 
 
-    
+
     @PostMapping("/add")
     public CardDto addCar(@RequestBody CardDto car) {
         return carService.addNewCar(car);
@@ -46,8 +51,6 @@ public class CarController {
 
 
     @DeleteMapping("/delete/{id}")
-
-
     public ResponseEntity<String> removeCar(@PathVariable Long id) {
         boolean deleted = carService.deleteCar(id);
         return deleted ?
