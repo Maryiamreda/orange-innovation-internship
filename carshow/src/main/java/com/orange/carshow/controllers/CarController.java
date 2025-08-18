@@ -35,7 +35,7 @@ public class CarController {
     @GetMapping("/{id}")
     public ResponseEntity<CardDto> getCarById(@PathVariable Long id) {
         return carService.getCars().stream()
-                .filter(car -> id.equals(car.getModel().getId())) // safer than ==
+                .filter(car -> id.equals(car.getModel().getId()))
                 .findFirst()
                 .map(ResponseEntity::ok)
                 .orElse(ResponseEntity.notFound().build());
