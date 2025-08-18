@@ -2,6 +2,7 @@ package com.orange.carshow.services;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Collections;
 import java.util.List;
 
 import org.springframework.stereotype.Service;
@@ -250,14 +251,24 @@ public class CarService {
         carLits.addAll(Arrays.asList(mapper.readValue(cars, CardDto[].class)));
     }
 
+
     public List<CardDto> getCars() {
         return carLits;
     }
+
+
+
+
     public CardDto addNewCar(CardDto car) {
          carLits.add(car);
          return car;
     }
 
+
+
+    public boolean deleteCar(Long id) {
+        return carLits.removeIf(car -> car.getModelID() == id);
+    }
 
 
 

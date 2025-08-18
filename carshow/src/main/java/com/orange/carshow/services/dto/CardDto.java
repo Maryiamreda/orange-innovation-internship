@@ -4,7 +4,7 @@ import com.fasterxml.jackson.annotation.JsonAlias;
 
 import lombok.Data;
 
-@Data
+@Data //Lombok's @Data annotation generates getter methods based on the exact field name
 public class CardDto {
 
     private String thumbnail;
