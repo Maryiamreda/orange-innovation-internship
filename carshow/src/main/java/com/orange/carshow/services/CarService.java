@@ -279,11 +279,19 @@ public class CarService {
         return mostExpensiveCar;
     }
 
-
     public boolean deleteCar(Long id) {
         return carLits.removeIf(car -> car.getModelID() == id);
     }
+    public List<CardDto> getCarsByModelName(String modelName) {
+        List<CardDto> filteredCars = new ArrayList<>();
 
+        for (CardDto car : carLits) {
+            if (car.getModel().getNameEn().toLowerCase().contains(modelName.toLowerCase())) {
+                filteredCars.add(car);
+            }
+        }
+        return filteredCars;
+    }
 
 
 }
